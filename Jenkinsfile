@@ -10,6 +10,7 @@ pipeline{
         stage('SCM'){
             steps{
                 git credentialsId: 'github', 
+                    branch: 'main',
                     url: 'https://github.com/ValM11/MAVEN_WAR_HELLO_WORLD'
             }
         }
