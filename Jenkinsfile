@@ -31,10 +31,7 @@ pipeline{
         
         stage('DockerHub Push'){
             steps{
-                {
-                    sh "docker login -u vmefrei -p fedoratest"
-                }
-                
+                sh "docker login -u vmefrei -p fedoratest",    
                 sh "docker push vmefrei/helloeval:${DOCKER_TAG} "
             }
         }
