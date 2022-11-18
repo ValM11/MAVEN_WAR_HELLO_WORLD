@@ -29,7 +29,7 @@ pipeline{
         
         stage('DockerHub Push'){
             steps{
-                withCredentials([string(credentialsId: 'vmefrei', variable: 'fedoratest')]) {
+                {
                     sh "docker login -u vmefrei -p fedoratest"
                 }
                 
