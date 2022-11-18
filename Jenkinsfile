@@ -23,17 +23,17 @@ pipeline{
         
         stage('Docker Build'){
             steps{
-                sh "docker build . -t valm11/helloeval:${DOCKER_TAG} "
+                sh "docker build . -t vmefrei/helloeval:${DOCKER_TAG} "
             }
         }
         
         stage('DockerHub Push'){
             steps{
-                withCredentials([string(credentialsId: 'valm11', variable: 'dockerHubPwd')]) {
-                    sh "docker login -u valm11 -p ${dockerHubPwd}"
+                withCredentials([string(credentialsId: 'vmefrei', variable: 'fedoratest')]) {
+                    sh "docker login -u vmefrei -p ${dockerHubPwd}"
                 }
                 
-                sh "docker push valm11/helloeval:${DOCKER_TAG} "
+                sh "docker push vmefrei/helloeval:${DOCKER_TAG} "
             }
         }
         
