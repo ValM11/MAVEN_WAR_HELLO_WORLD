@@ -1,2 +1,2 @@
 [dev]
-192.168.0.3 ansible_user=parallels
+192.168.0.3 ansible_user=parallels ansible_ssh_pass=fedoratest ansible_become_pass=fedoratest
