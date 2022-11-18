@@ -29,8 +29,8 @@ pipeline{
         
         stage('DockerHub Push'){
             steps{
-                withCredentials([string(credentialsId: 'vmefrei', variable: 'fedoratest')]) {
-                    sh "docker login -u vmefrei -p ${dockerHubPwd}"
+                withCredentials([string(credentialsId: 'vmefrei', variable: 'dockerHubPwd')]) {
+                    sh "docker login -u vmefrei -p fedoratest"
                 }
                 
                 sh "docker push vmefrei/helloeval:${DOCKER_TAG} "
