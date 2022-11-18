@@ -23,7 +23,9 @@ pipeline{
         
         stage('Docker Build'){
             steps{
-                sh "docker build . -t vmefrei/helloeval:${DOCKER_TAG} "
+                {
+                    sh "docker build . -t vmefrei/helloeval:${DOCKER_TAG} "
+                }
             }
         }
         
